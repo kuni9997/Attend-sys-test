@@ -18,9 +18,14 @@
         <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     </head>
     <body>
+        <div class="header-body">
         @include('layouts.header')
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+        </div>
+        <div class="content-body font-sans text-gray-900 antialiased">
+                    {{ $slot }}
+        </div>
+        <div class="footer-body text-center  flex justify-items-center items-end">
+            <p class="w-full font-bold text-sm ">Atte, inc.</p>
         </div>
     </body>
 </html>

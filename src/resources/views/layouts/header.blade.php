@@ -1,4 +1,4 @@
-    <header class="header">
+    <header class="">
         <div class='header-logo'>
             <h1 class="header-logo--title">Atte</h1>
             @auth
