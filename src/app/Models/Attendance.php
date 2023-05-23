@@ -14,7 +14,7 @@ class Attendance extends Model
     protected $table = 'attendances';
 
     protected $fillable = ['user_id','working_st', 'working_end'];
-    protected $dates = ['working_st'];
+    protected $dates = ['working_st','working_end'];
 
     public function users(){
         return $this->belongsTo('App\Models\user');
@@ -32,7 +32,14 @@ class Attendance extends Model
     public function scopeGetLatestId($query){
         $authNum = Auth::id();
         $dateNow = Carbon::now()->toDateString();
-        return $query->where('user_id',$authNum)->whereDate('working_st', $dateNow);
+        return $query->where('user_id', $authNum)->whereDate('working_st', $dateNow);
+    }
+
+    public function scopeGetYesterdayId($query)
+    {
+        $authNum = Auth::id();
+        $dateYesterday = Carbon::yesterday()->toDateString();
+        return $query->where('user_id', $authNum)->whereDate('working_st', $dateYesterday);
     }
 
 

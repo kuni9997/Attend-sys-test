@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\BreakTimeController;
-use App\Http\Controllers\WorkingController;
+use App\Http\Controllers\ClockInController;
+use App\Http\Controllers\RecordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +31,9 @@ require __DIR__.'/auth.php';
 
 
 //下記が追加で記述したルーティング
-Route::get('/dashboard/WorkingSt', [WorkingController::class, 'start'])->middleware('Attendance');
-Route::get('/dashboard/BreakingSt', [BreakTimeController::class, 'start']);
+Route::get('/dashboard/working', [ClockInController::class, 'workingTimeSt']);
+Route::post('/dashboard/working', [ClockInController::class, 'workingTimeEnd'])->middleware('workingTimeEnd');
+Route::get('/dashboard/break', [ClockInController::class, 'breakTimeSt'])->middleware('breakTimeSt');
+Route::post('/dashboard/break', [ClockInController::class, 'breakTimeEnd'])->middleware('breakTimeEnd');
+
+Route::get('/record', [RecordController::class, 'recordIndex']);

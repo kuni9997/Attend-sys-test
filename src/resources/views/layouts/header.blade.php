@@ -4,9 +4,15 @@
             @auth
             <nav>
                 <ul class="header-nav">
-                    <li><a>ホーム</a> </li>
-                    <li><a>日付一覧</a></li>
-                    <li><a>ログアウト</a></li>
+                    <li><a href="/">ホーム</a> </li>
+                    <li><a href="/record">日付一覧</a></li>
+                    <li>
+                        <form action="{{ route('logout')}}" method="post">
+                        @csrf
+                            <a href="route('logout')" onclick="event.preventDefault(); 
+                            this.closest('form').submit();">ログアウト</a>
+                        </form>
+                    </li>
                 </ul>
             </nav>
             @endauth

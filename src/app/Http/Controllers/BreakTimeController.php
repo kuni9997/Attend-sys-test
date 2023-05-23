@@ -21,4 +21,15 @@ class BreakTimeController extends Controller
     
     return redirect('/dashboard');
     }
+
+    public function end() {
+        
+        $Time=[
+            'break_time_end' => Carbon::now(),
+        ];
+
+        Attendance::with('breakTimes')->getLatestId()->where('break_time_end', null)->update(['break_time_end' => $Time]);
+
+        return redirect('/dashboard');
+    }
 }

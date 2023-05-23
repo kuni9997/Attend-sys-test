@@ -64,5 +64,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'Attendance' => \App\Http\Middleware\AttendanceMiddleware::class,
+        'workingTimeEnd' => \App\Http\Middleware\WorkingTimeEndMiddleware::class,
+        'breakTimeSt' => \App\Http\Middleware\BreakTimeStMiddleware::class,
+        'breakTimeEnd' => \App\Http\Middleware\BreakTimeEndMiddleware::class,
     ];
 }
