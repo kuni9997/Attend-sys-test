@@ -1,0 +1,46 @@
+.date-display{
+    height: 10%;
+}
+
+.date-display form {
+    background-color: white;
+    border: solid thin #2d2af4;
+    color: #2d2af4;
+    font-weight: bold;
+    width:2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.date-display p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.record-list{
+    height: 75%;
+    width:80%;
+}
+
+
+
+.table__header{
+    border-top: solid thin black;
+}
+
+.table__item{
+    border-top: solid thin black;
+}
+
+.table__item--name{
+    width:100%;
+    text-align: left;
+    padding-left: 30%;
+}
+
+
+.link {
+    height: 10%;
+}

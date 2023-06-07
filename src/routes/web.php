@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClockInController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecordController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +20,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'switch'])->name('dashboard');
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->middleware(['auth','switch'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'switch'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

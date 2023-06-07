@@ -3,11 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Attendance;
+use App\Models\Break_Time;
+use Carbon\Carbon;
+use DateTime;
 
 class RecordController extends Controller
 {
-    public function recordIndex()
+    public function recordIndex(Request $request)
     {
-        return view('AttendanceList');
+
+        // dd($request->date);
+
+        $date = ($request->input('date')==NULL) ? Carbon::now()->format('Y-m-d'):$request->input('date');
+
+        // dd($date);
+        $users = User::with([
+            'Attendances' => function ($query) use($date) {
+                $query->whereDate('working_st', $date);
+            },
+            'Attendances.breakTimes' => function ($query) {
+                $query->get();
+            }
+        ])->whereHas('Attendances' ,function ($query) use($date) {
+                $query->whereDate('working_st', $date);
+            })->paginate(5);
+        // dd($users);
+        $date1 = new DateTime($date);
+        $date2 = new DateTime($date);
+        $date3 = new DateTime($date);
+
+        return view('AttendanceList',compact('users','date1', 'date2', 'date3'));
     }
 }

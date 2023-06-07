@@ -677,6 +677,9 @@ select {
 .col-end-3 {
   grid-column-end: 3;
 }
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
 .row-start-1 {
   grid-row-start: 1;
 }
@@ -759,6 +762,9 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -825,6 +831,9 @@ select {
 .max-w-7xl {
   max-width: 80rem;
 }
+.max-w-full {
+  max-width: 100%;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -859,6 +868,12 @@ select {
 .cursor-default {
   cursor: default;
 }
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
 .list-inside {
   list-style-position: inside;
 }
@@ -870,6 +885,9 @@ select {
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .grid-rows-6 {
   grid-template-rows: repeat(6, minmax(0, 1fr));
@@ -1113,6 +1131,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1265,6 +1287,9 @@ select {
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 .focus\:z-10:focus {
   z-index: 10;

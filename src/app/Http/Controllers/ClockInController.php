@@ -21,7 +21,7 @@ class ClockInController extends Controller
         Attendance::create($user);
 
         // session()->put('workingSes', 1);
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function workingTimeEnd()
@@ -35,7 +35,7 @@ class ClockInController extends Controller
                     $data->breakTimes()->whereNull('break_time_end')->update(['break_time_end' => Carbon::now()]);
                 }
 
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function breakTimeSt()
@@ -47,7 +47,7 @@ class ClockInController extends Controller
         ];
         Break_Time::create($Time);
 
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function breakTimeEnd()
@@ -64,6 +64,6 @@ class ClockInController extends Controller
 
         }
 
-        return redirect('/dashboard');
+        return redirect('/');
     }
 }

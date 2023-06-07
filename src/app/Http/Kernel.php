@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'workingTimeEnd' => \App\Http\Middleware\WorkingTimeEndMiddleware::class,
         'breakTimeSt' => \App\Http\Middleware\BreakTimeStMiddleware::class,
         'breakTimeEnd' => \App\Http\Middleware\BreakTimeEndMiddleware::class,
+        'switch'=> \App\Http\Middleware\AttendanceSwitch::class,
     ];
 }
