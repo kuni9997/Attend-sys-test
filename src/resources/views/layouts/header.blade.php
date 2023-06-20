@@ -6,6 +6,7 @@
                 <ul class="header-nav">
                     <li><a href="/">ホーム</a> </li>
                     <li><a href="/record">日付一覧</a></li>
+                    <li><a href="/myRecord">My勤怠一覧</a></li>
                     <li>
                         <form action="{{ route('logout')}}" method="post">
                         @csrf

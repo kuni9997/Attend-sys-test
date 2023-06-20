@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClockInController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MyRecordController;
 use App\Http\Controllers\RecordController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,4 @@ Route::get('/dashboard/break', [ClockInController::class, 'breakTimeSt'])->middl
 Route::post('/dashboard/break', [ClockInController::class, 'breakTimeEnd'])->middleware('breakTimeEnd');
 
 Route::get('/record', [RecordController::class, 'recordIndex']);
+Route::get('/myRecord', [MyRecordController::class ,'recordIndex']);
