@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'switch'])->name('dashboard');
 
-Route::get('/', [HomeController::class, 'index'])->middleware(['auth','switch'])->name('dashboard');
-Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'switch'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->middleware(['verified','switch'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['verified', 'switch'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
