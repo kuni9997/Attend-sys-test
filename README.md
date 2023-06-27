@@ -24,6 +24,8 @@ mysql:8.0.26
 
 ##テーブル設計図
 
+https://github.com/kuni9997/Attend-sys-test/issues/4#issue-1746673855
+
 
 
 ##ER図
