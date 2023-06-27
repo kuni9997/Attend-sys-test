@@ -15,6 +15,7 @@ local
 -新規登録機能
 -勤務時間打刻機能
 -勤怠情報確認ページ
+-個人用勤怠情報確認ページ
 
 ##使用技術
 php:8.1.1
@@ -29,6 +30,8 @@ https://github.com/kuni9997/Attend-sys-test/issues/4#issue-1746673855
 
 
 ##ER図
+
+https://github.com/kuni9997/Attend-sys-test/issues/6#issue-1777778205
 
 #環境構築
 Dockerで環境を構築
