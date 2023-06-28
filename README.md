@@ -34,4 +34,12 @@ https://github.com/kuni9997/Attend-sys-test/issues/4#issue-1746673855
 https://github.com/kuni9997/Attend-sys-test/issues/6#issue-1777778205
 
 #環境構築
-Dockerで環境を構築
+Dockerで本番環境と開発環境を切り分けて構築
+
+それぞれのコマンドでコンテナを　起動
+
+本番環境
+docker compose -f docker-compose-prod.yaml up -d
+
+開発環境
+docker compose -f docker-compose-dev.yaml up -d
